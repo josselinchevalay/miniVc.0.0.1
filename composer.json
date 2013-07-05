@@ -1,7 +1,17 @@
 {
-	"author":{
-		"name":"Josselin chevalay",
-		"mail": "josselin54.chevalay@gmail.com",
-		"licence":"gpl 3"
-	}
+	"name": "monolog/monolog",
+    "description": "nouveau petit framework MVC en php sans aucune prétention",
+    "keywords": ["php", "MVC", "poo"],
+    "homepage": "https://github.com/josselinchevalay/miniVc.0.0.1",
+    "type": "framwork",
+    "license": "gpl 3",
+    "authors": [
+        {
+            "name": "Josselin Chevalay",
+            "email": "josselin54.chevalay@gmail.com",
+            "homepage": "http://josselinchevalay.wordpress.com/"
+        },
+    "require": {
+        "monolog/monolog": "1.2.*"
+    }
 }
