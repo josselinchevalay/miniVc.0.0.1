@@ -10,8 +10,8 @@
             "name": "Josselin Chevalay",
             "email": "josselin54.chevalay@gmail.com",
             "homepage": "http://josselinchevalay.wordpress.com/"
-        },
-    "require": [
+        }],
+    "require": {
         "monolog/monolog": "1.2.*"
-    ]
+    }
 }
