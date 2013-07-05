@@ -1,5 +1,5 @@
 {
-	"name": "minivc/miniVc",
+	"name": "minivc/minivc",
     "description": "nouveau petit framework MVC en php sans aucune prétention",
     "keywords": ["php", "MVC", "poo"],
     "homepage": "https://github.com/josselinchevalay/miniVc.0.0.1",
