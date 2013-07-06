@@ -68,8 +68,7 @@ class Controller{
 		if($this->layout == false){
 			echo $content_for_layout;
 		}else{
-			require(ROOT.'vues/layout/'.$this->layout.".php");
-			echo $content_for_layout;
+			require(ROOT.'vues/layout/'.$this->layout.".php");			
 		}
 
 	}
