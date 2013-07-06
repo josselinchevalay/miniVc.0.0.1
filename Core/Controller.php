@@ -69,6 +69,7 @@ class Controller{
 			echo $content_for_layout;
 		}else{
 			require(ROOT.'vues/layout/'.$this->layout.".php");
+			echo $content_for_layout;
 		}
 
 	}
