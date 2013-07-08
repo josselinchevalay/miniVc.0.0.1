@@ -21,7 +21,7 @@ class Router{
 	private static $instance;
 
 	/** propriété qui définis le home ou le controller et l'action à faire si la route est a la racine du site**/
-	private $home = array("index", "list");
+	private $home = array("index", "hello");
 
 	/**                         **/
 	private $firewall;
@@ -36,6 +36,9 @@ class Router{
 		Router::$instance = $this;
 		define('WEBROOT', str_replace('index.php', '', $_SERVER['SCRIPT_NAME']));
 		define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
+        define('BOOTSTRAP', WEBROOT."/ressources/bootstrap/css/bootstrap.css");
+        define('BOOTSTRAPRESPONSIVE', WEBROOT."/ressources/bootstrap/css/bootstrap-responsive.css");
+        define('BOOTSTRAPJS', WEBROOT."/ressources/bootstrap/js/");
 		//define('FOUINE', WEBROOT."/ressources/images/fouine.jpg");
 		// mise en place de l'authentification
 		//define('FIREWALL_NAME', 'myFirewall');
@@ -45,6 +48,7 @@ class Router{
 		require(ROOT.'core/Controller.php');
 		require(ROOT.'core/DataStore.php');
 		require(ROOT.'core/firewall.php');
+        require(ROOT.'core/Helper/EscapeHelper.php');
 
 		// mis en place d'une athentification
 		//require(ROOT.'Controllers/myFirewall.php');

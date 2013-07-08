@@ -15,7 +15,7 @@
 class Controller{
 
 	// Propriètées qui définit si nous utilisons ou non un layout
-	var $layout = "";
+	var $layout = "default";
 	// tableau de variable qui vous être utlisé dans nos vues
 	var $vars = array();
 
@@ -39,12 +39,13 @@ class Controller{
 			// grosse verification sur le post est le fait qu'il contienne un token valide
 			if(isset($_POST['token']) && !empty($_POST['token']) && ($_SESSION['token'] == $_POST['token']))
 			{
-				$this->requestPost = $_POST;
+				$this->requestPost = $_POST;            
+                
 			}else{
 				throw new Exception("Token n'est pas valide", 1);
 				
 			}
-		}
+		}        
 	}
 
 	
@@ -68,7 +69,7 @@ class Controller{
 		if($this->layout == false){
 			echo $content_for_layout;
 		}else{
-			require(ROOT.'vues/layout/'.$this->layout.".php");			
+			require(ROOT.'vues/layout/'.$this->layout.".php");
 		}
 
 	}
