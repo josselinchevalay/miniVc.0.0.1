@@ -41,7 +41,7 @@ class Router{
         define('BOOTSTRAPJS', WEBROOT."/ressources/bootstrap/js/");
 		//define('FOUINE', WEBROOT."/ressources/images/fouine.jpg");
 		// mise en place de l'authentification
-		//define('FIREWALL_NAME', 'myFirewall');
+		define('FIREWALL_NAME', 'MyFirewall');
 		
 
 		require(ROOT.'core/model.php');
@@ -51,10 +51,10 @@ class Router{
         require(ROOT.'core/Helper/EscapeHelper.php');
 
 		// mis en place d'une athentification
-		//require(ROOT.'Controllers/myFirewall.php');
+		require(ROOT.'Controllers/myFirewall.php');
 
-		//$name_firewall = FIREWALL_NAME;
-		//$this->firewall = new $name_firewall($this);
+		$name_firewall = FIREWALL_NAME;
+		$this->firewall = new $name_firewall($this);
 
 
 	}
@@ -102,8 +102,11 @@ class Router{
 					$actionName = $Action.'Action';
 					call_user_func_array(array($Controller, $actionName), $path );
 				}
-				else{
-						$this->firewall->doFilter($path[0], $path[1], $path);
+				else{                        
+                        $Controller = $path[0];
+                        $Action = $path[1];
+                        unset($path[0]); unset($path[1]);
+						$this->firewall->doFilter($Controller, $Action, $path);
 				}
 				
 		}
