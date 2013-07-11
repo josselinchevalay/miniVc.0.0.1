@@ -10,10 +10,6 @@
             "name": "Josselin Chevalay",
             "email": "josselin54.chevalay@gmail.com",
             "homepage": "http://josselinchevalay.wordpress.com/"
-        }],
-    "require": {
-        "monolog/monolog": "1.4.1",
-        "phpdocumentor/phpdocumentor": "dev-release-2.0"
-    },
+        }],    
     "minimum-stability": "Dev"
 }
