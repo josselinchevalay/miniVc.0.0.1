@@ -12,7 +12,7 @@
             "homepage": "http://josselinchevalay.wordpress.com/"
         }],
     "require": {
-        "monolog/monolog": "1.2.*",
+        "monolog/monolog": "1.4.1",
         "phpdocumentor/phpdocumentor": "dev-develop"
     }
 }
