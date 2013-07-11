@@ -13,6 +13,6 @@
         }],
     "require": {
         "monolog/monolog": "1.4.1",
-        "phpdocumentor/phpdocumentor": "dev-develop"
+        "phpdocumentor/phpdocumentor": "dev-release-2.0"
     }
 }
