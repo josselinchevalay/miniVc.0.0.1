@@ -26,7 +26,7 @@
         const login ="root";  // login admin
         const Password =""; // password admin
         const Pport ="3306";  // port du serveur default 3306
-
+        const TypeDb = "Mysql"; // gestion du type de db gerer
         /**
         * @var Singleton
         * @access private
@@ -59,7 +59,12 @@
            self::$_instance = new DataStore();  
            try
             {
-               self::$_instance_db = new PDO('mysql:host='.self::Serveur.';dbname='.self::Db, self::login, self::Password);
+              
+                switch(self::TypeDb){
+                    case "MS" : {self::$_instance_db = new PDO('sqlsrv:Server='.self::Serveur.';Database='.self::Db, self::login, self::Password);} break;
+                    case "Mysql": {self::$_instance_db = new PDO('mysql:host='.self::Serveur.';dbname='.self::Db, self::login, self::Password);}break;
+                    default : {self::$_instance_db = new PDO('sqlsrv:Server='.self::Serveur.';Database='.self::Db, self::login, self::Password);}break;
+                }
             }catch(Exception $e)
             {
                 die("Erreur :".$e->getMessage());
